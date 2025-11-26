@@ -1,0 +1,20 @@
+#pragma once
+
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+
+#include "../window/time.hpp"
+
+
+class Camera
+{
+public:
+	glm::vec3 position, front, up, right, worldup;
+
+	float yaw, pitch, movementSpeed, mouseSensitivity, fov;
+	float velocity;
+
+	Camera();
+	glm::mat4 getViewMatrix();
+	void update();
+};
